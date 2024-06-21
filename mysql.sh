@@ -38,3 +38,6 @@ VALIDATE $? "Starting MySQL Server is.."
 
 mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
 VALIDATE $? "Setting up root password"
+
+#to overcome Idempotency use following command
+#mysql -uroot -pExpenseApp@1 -e "CREATE DATABASE expenseapp;
