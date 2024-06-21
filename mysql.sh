@@ -47,7 +47,9 @@ VALIDATE $? "Starting MySQL Server is.."
 #to overcome Idempotency use following command
 #mysql -uroot -pExpenseApp@1 -e "CREATE DATABASE expenseapp;
 
-mysql -h db.daws78s.online -uroot -pExpenseApp@1 &>>$LOGFILE
+#mysql -h db.daws78s.online -uroot -pExpenseApp@1 &>>$LOGFILE
+mysql -h 172.31.30.170 -uroot -pExpenseApp@1 &>>$LOGFILE
+
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ExpenseApp@1 &>>LOGFILE
