@@ -9,6 +9,10 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+#echo "Please enter your DB password:"
+#read -s mysql_root_password 
+#replace ExpenseApp@1 with ${mysql_root_password} in command to hide in script
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
@@ -49,5 +53,5 @@ then
     mysql_secure_installation --set-root-pass ExpenseApp@1 &>>LOGFILE
     VALIDATE $? "MySQL Root password setup"
 else
-    echo "mySQL Root password is already setup...$Y SKIPPING $N"
+    echo -e "mySQL Root password is already setup...$Y SKIPPING $N"
 fi
