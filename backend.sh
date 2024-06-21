@@ -76,7 +76,8 @@ VALIDATE $? "Enabling backend service"
 dnf install mysql -y &>>LOGFILE
 VALIDATE $? "Installing Mysql client"
 
-mysql -h db.daws78s.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
+#mysql -h db.daws78s.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h 172.31.30.170 -uroot -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "Setting up root password"
 
 systemctl restart backend &>>LOGFILE
