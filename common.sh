@@ -1,4 +1,14 @@
 #!.bin/bash
+set -e #to check error on every line it will exit the code once error occurs
+
+#to replace validate() command trap will be used.
+
+handle_error(){
+    echo "Error occurred at line $1": $1, error command: $2"
+}
+
+trap 'handle_error $LINENO "$BASH_COMMAND"' ERR 
+
 
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
@@ -22,6 +32,7 @@ VALIDATE(){
         echo -e "$2...$G SUCCESS $N"
     fi
 }
+
 check_root(){
 if [ $USERID -ne 0 ]
 then
