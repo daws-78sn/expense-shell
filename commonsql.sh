@@ -22,7 +22,7 @@ systemctl start mysqld &>>$LOGFILE
 #mysql -uroot -pExpenseApp@1 -e "CREATE DATABASE expenseapp;
 
 #mysql -h db.daws78s.online -uroot -pExpenseApp@1 &>>$LOGFILE
-mysql -h 172.31.89.128 -uroot -pExpenseApp@1 &>>$LOGFILE
+mysql -h 172.31.89.128 -uroot -pExpenseAppp@1 &>>$LOGFILE
 
 if [ $? -ne 0 ]
 then
