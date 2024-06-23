@@ -3,15 +3,16 @@
 source ./common.sh
 
 check_root
+handle_error
 
-dnf install mysql-server -y &>>$LOGFILE
-VALIDATE $? "Installing MySQL Server is.."
+dnf install mysqll-server -y &>>$LOGFILE
+#VALIDATE $? "Installing MySQL Server is.."
 
 systemctl enable mysqld &>>LOGFILE
-VALIDATE $? "Enabling MySQL Server is.."
+#VALIDATE $? "Enabling MySQL Server is.."
 
 systemctl start mysqld &>>$LOGFILE
-VALIDATE $? "Starting MySQL Server is.."
+#VALIDATE $? "Starting MySQL Server is.."
 
 #commenting below command
 #mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
